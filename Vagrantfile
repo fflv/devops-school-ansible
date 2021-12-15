@@ -6,10 +6,10 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_
 SCRIPT
 
 $gitansible_install = <<-'SCRIPT'
-sudo yum update -y
-sudo yum install -y git
-sudo yum install epel-release
-sudo yum install ansible
+sudo yum -y update
+sudo yum -y install git
+sudo yum -y install epel-release
+sudo yum -y install ansible
 SCRIPT
 
 Vagrant.configure("2") do |config|
