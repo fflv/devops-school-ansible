@@ -1,0 +1,24 @@
+---
+- name: Install the latest version of Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: Make sure a service unit is running
+  ansible.builtin.systemd:
+    state: started
+    name: httpd
+    enabled: yes
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html/index.html 
+    # owner: root
+    # group: root
+    mode: '0644'
+
+- firewalld:
+    service: https
+    permanent: true
+    state: enabled

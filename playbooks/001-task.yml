@@ -1,0 +1,10 @@
+---
+- name: Install and delete httpd
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  roles:
+    - { role: 101-install, tags: "101" }
+    - { role: 102-delete, tags: "102" }
+    - { role: 103-fixgrub, tags: "103" }

@@ -1,0 +1,15 @@
+---
+- name: Install the latest version of Apache
+  yum:
+    name: httpd
+    state: removed
+
+- name: Remove file (delete file)
+  ansible.builtin.file:
+    path: /var/www/html/index.html
+    state: absent
+
+- firewalld:
+    service: https
+    permanent: true
+    state: disabled
