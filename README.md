@@ -19,6 +19,6 @@
 
 ## Задание №2
 
-`ansible-playbook -i inventory.ini playbooks/002-task.yml` 
+`ansible-playbook -i inventory.ini playbooks/002-task.yml --ask-vault-pass` 
 
 Пароль ansible-vault: vagrant
