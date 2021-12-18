@@ -1,0 +1,11 @@
+---
+# tasks file for 201-adduser
+
+- name: Add several users
+  user:
+    name: "{{ item.name }}"
+    home: "{{ item.home }}"
+    comment: "{{ item.comment }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    state: present
+  loop: "{{ users }}"
