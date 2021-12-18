@@ -12,6 +12,13 @@
 
 Чтобы запустить задание по тэгу
 
-ansible-playbook -i inventory.ini playbooks/001-task.yml --tags 103
+`ansible-playbook -i inventory.ini playbooks/001-task.yml --tags 103`
 
-По умолчаниию, в тестируемой версии CentOS присутствовали параметры в /etc/default/grub. Чтобы задание отработало - нужно убрать хотя бы один параметр вручную.
+По умолчаниию в тестируемой версии CentOS присутствовали параметры в /etc/default/grub. Чтобы задание отработало - нужно убрать хотя бы один параметр вручную.
+
+
+## Задание №2
+
+`ansible-playbook -i inventory.ini playbooks/002-task.yml` 
+
+Пароль ansible-vault: vagrant
